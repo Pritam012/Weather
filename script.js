@@ -55,28 +55,28 @@ async function locateWeather() {
 
 function extract(lis) {
     const description = lis.condition.text;
-    condition.textContent += lis.condition.text;
-    cityName.textContent += input.value
+    condition.textContent = lis.condition.text;
+    cityName.textContent = input.value
     //get date
     const tempDate = new Date();
     
     let day = tempDate.getDate();
     let month = tempDate.getMonth() + 1;
     let year = tempDate.getFullYear();
-    date.textContent += `${day}/${month}/${year}`;
+    date.textContent = `${day}/${month}/${year}`;
     //date end
     //get time
-    currTemp.innerHTML += `${lis.temp_c}°C`
-    time.textContent += tempDate.getHours() + ":" + tempDate.getMinutes();
+    currTemp.innerHTML = `${lis.temp_c}°C`
+    time.textContent = tempDate.getHours() + ":" + tempDate.getMinutes();
     //time end
 //    humidity.innerHTML= `<i class="fa-solid fa-droplet-percent">${lis.humidity}%</i>`;
-    humidity.innerHTML += `<br><i class="fa-solid fa-droplet">&nbsp&nbsp&nbsp${lis.humidity}%</i>`
+    humidity.innerHTML = `&nbsp&nbsp&nbsp${lis.humidity}%`
     // humidity.textContent= `${lis.humidity}%`;
     // wind.textContent = `${lis.wind_mph}mph`;
-    wind.innerHTML += `<br><i class="fa-solid fa-wind">&nbsp&nbsp&nbsp${lis.wind_mph}mph</i>`
+    wind.innerHTML = `&nbsp&nbsp&nbsp${lis.wind_mph}mph`
     console.log(lis.condition);
     getSticker(description);
-    updated.innerHTML += `<br>${lis.last_updated}`
+    updated.innerHTML = `<br>${lis.last_updated}`
     // statusImg.textContent = getSticker(description);
     // console.log(getSticker(description));
     
@@ -85,7 +85,7 @@ function extract(lis) {
 function extractFore(li) {
     console.log(li);
    
-    rain.innerHTML += `<br><i class="fa-solid fa-cloud-rain">&nbsp&nbsp&nbsp${li.daily_will_it_rain}%</i>`
+    rain.innerHTML = `&nbsp&nbsp&nbsp${li.daily_will_it_rain}%</i>`
 
     // wind.textContent = li.wind_mph;
     // humidity.textContent= li.humidity;
